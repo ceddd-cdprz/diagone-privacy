@@ -38,6 +38,7 @@ a{color:var(--ac)}
 <tr><td>Network and Wi-Fi state</td><td>The network check, to show your connection type and status.</td></tr>
 <tr><td>Close background apps</td><td>The optional memory cleanup button in Game Zone. It asks Android to close background apps; Android may restart them.</td></tr>
 <tr><td>Display over other apps (optional)</td><td>Only if you turn on the Game Zone crosshair. It draws a small crosshair above your game and does not read the screen, record anything or take your touches. While it is on, Android shows a notification so you can switch it off. You grant it in Android Settings and can withdraw it there at any time.</td></tr>
+<tr><td>Foreground service (Game Boost)</td><td>After you tap PLAY or Turbo Boost, DiagOne can keep asking Android to stop background apps while your game runs, so the game keeps more memory. Android shows a notification with a Stop button while it runs. It reads only how much memory is free, stores nothing and sends nothing. It ends when you return to DiagOne.</td></tr>
 <tr><td>Do Not Disturb access (optional)</td><td>Only if you choose to let Game Zone switch Do Not Disturb on or off for you. You grant it in Android Settings and can withdraw it there at any time.</td></tr>
 </table>
 <p>You can deny any permission. The related test then simply does not run; the rest of the app keeps working.</p>
@@ -46,12 +47,13 @@ a{color:var(--ac)}
 <p>Game Zone reads the list of apps on your phone that can be opened, only so you can pick games and launch them. This list stays on your device and is never sent anywhere.</p>
 
 <h2>4. Internet requests made by the app</h2>
-<p>The app only contacts the internet in these two cases. In both, the server operator can see your IP address, as with any website you visit.</p>
+<p>The app only contacts the internet in these three cases. In both, the server operator can see your IP address, as with any website you visit.</p>
 <ul>
 <li><strong>Network test.</strong> When you press a network test, the app requests a tiny page from Google's connectivity server (www.gstatic.com) to measure delay.</li>
+<li><strong>Speed test and client &amp; server lookup.</strong> Only when you tap "Test speed", the app sends small delay requests and downloads and uploads test data (about 30 to 80 MB) to Cloudflare's speed-test service (speed.cloudflare.com), then asks it which IP address, provider and approximate city it sees for you and which of its servers answered. The results are shown on screen and kept only in memory until you close the app. They are not saved or sent to us.</li>
 <li><strong>GPS map (optional, off by default).</strong> If you switch the map on, the app downloads map tiles from OpenStreetMap (tile.openstreetmap.org). That server can see which map area you are viewing, which is roughly where you are. Your exact coordinates are not sent. With the map off, nothing is requested.</li>
 </ul>
-<p>These services have their own privacy policies: <a href="https://policies.google.com/privacy">Google</a> and the <a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy">OpenStreetMap Foundation</a>.</p>
+<p>These services have their own privacy policies: <a href="https://policies.google.com/privacy">Google</a>, <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a> and the <a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy">OpenStreetMap Foundation</a>.</p>
 
 <h2>5. What we do not do</h2>
 <ul>
